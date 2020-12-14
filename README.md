@@ -1,15 +1,13 @@
-# wl-bim-viewer
+# vue-autodesk-forge-viewer-wl
 
-一个用于在浏览器上展示bim模型的vue插件，可以预览转化后的BIM、CAD文件。       
-基于vue和autodesk forge viewer写成。        
-目前支持单模型加载及多模型顺序加载。        
-其他特性正在扩展中。
+A vue plugin for displaying bim models on the browser, which can preview the converted BIM and CAD files.
+Written based on Vue and Autodesk Forge Viewer. Currently supports single model loading and multi-model sequential loading. Other features are being expanded.
 
-传送门：[Github](https://github.com/hql7/wl-bim-viewer)      &        [autodesk forge viewer文档](https://forge.autodesk.com/en/docs/viewer/v7/reference/Viewing/)
+Portal: [Github](https://github.com/hql7/wl-bim-viewer) & [autodesk forge viewer document](https://forge.autodesk.com/en/docs/viewer/v7/reference /Viewing/)
 
-## [在线访问](http://wlui.com.cn/ui/bim) 
+## [Online Access](http://wlui.com.cn/ui/bim)
 
-## 快速上手
+## Get started quickly
 `npm i wl-bim-viewer -S`
 
 ```
@@ -26,55 +24,55 @@ Vue.use(wlBimViewer);
 </wl-bim-viewer>
 ```
 
-### 重要更新
-> 1.1.0 减少组件包体积，将js依赖cdn；请勿使用低于1.1.0版本
+### Important update
+> 1.1.0 Reduce the size of the component package and rely on cdn for js; please do not use a version lower than 1.1.0
 
-## 文档
+## Documentation
 
 ### Attributes
-| 序号 | 参数 | 说明 | 类型 | 默认值 |
+| Serial number | Parameters | Description | Type | Default value |
 | ---- | ---- | ---- | ---- | ---- |
-| 1 | docs | 模型数据数组，元素为对象且至少需要一个path字段（模型文件路径，可配置） | Array | - |
-| 2 | props | 配置项,详见下 | Object | - |
-| 3 | multiple | 是否开启多模型顺序加载 | Boolean | false |
+| 1 | docs | Model data array, the elements are objects and at least one path field is required (model file path, configurable) | Array |-|
+| 2 | props | Configuration items, see below for details | Object |-|
+| 3 | multiple | Whether to enable sequential loading of multiple models | Boolean | false |
 
 ### props
-| 序号 | 参数 | 说明 | 默认字段 | 字段值类型 |
+| Serial Number | Parameters | Description | Default Field | Field Value Type |
 | ---- | ---- | ---- | ---- | ---- |
-| 1 | path | 用于配置docs参数内的模型文件路径字段，必填 | path | String |
-| 2 | options | 用于loadModel时的自定义模型配置项，可配置模型角度、位置等。此字段应是一个对象 | options | Object |
-| 3 | name | 用于docs参数内模型的名称字段，选填 | name | String |
+| 1 | path | Used to configure the model file path field in the docs parameter, required | path | String |
+| 2 | options | Used to customize model configuration items when loadModel. Model angle and position can be configured. This field should be an object | options | Object |
+| 3 | name | Used for the name field of the model in the docs parameter, optional | name | String |
 
 ### Events
-| 序号 | 事件名称 | 说明 | 回调参数 |
+| Serial number | Event name | Description | Callback parameters |
 | ---- | ---- | ---- | ---- |
-| 1 | init | viewer初始化事件，此时模型还未加载，可进行配置或注册事件操作 | function(viewer) 依次为当前viewer对象 | 
-| 2 | partSelect | 构件点击事件 | function(selections, event, info) 以此为当前选择构件、当前点击对象、构件信息 | 
-| 3 | cameraMove | 摄像头移动事件 | function(rvt) 依次为当前rvt对象 |
-| 4 | successAll | 多模型时，全部加载完毕事件 | function(result) 依次为全部模型对象数组 |
-| 5 | errorAll | 多模型时，全部加载失败事件 | function(result) 依次为失败信息 |
-| 6 | success | 模型加载成功回调 | function(result) 依次为当前模型信息 |
-| 7 | loaded | 模型渲染完毕回调 | function(evt) 依次为当前模型信息 |
-| 8 | error | 模型加载失败回调 | function(name, code) 依次为当前模型docs参数name字段、错误码 |
+| 1 | init | Viewer initialization event, the model has not been loaded at this time, you can configure or register event operations | function(viewer) is the current viewer object in turn |
+| 2 | partSelect | Component click event | function(selections, event, info) Use this as the current selected component, current click object, and component information |
+| 3 | cameraMove | Camera movement event | function(rvt) is the current rvt object in turn |
+| 4 | successAll | In case of multiple models, all loaded event | function(result) is an array of all model objects in turn |
+| 5 | errorAll | In the case of multiple models, all loading failure events | function(result) followed by failure information |
+| 6 | success | Model loading success callback | function(result) is the current model information in turn |
+| 7 | loaded | Model rendering finished callback | function(evt) followed by current model information |
+| 8 | error | Model loading failure callback | function(name, code) is the current model docs parameter name field and error code in turn |
 
 ### Form Methods
-| 序号 | 方法名 | 说明 | 参数 |
+| Serial number | Method name | Description | Parameters |
 | ---- | ---- | ---- | ---- |
-| 1 | clearColor | 清空模型构件上色 | - |
-| 2 | viewerFiting | 聚焦摄像头 | function(ids, focal) 依次为需要聚焦至的构件id、焦距 | 
-| 3 | unloadModel | 卸载model模型 | function(model) 依次为需要卸载的模型model，无则默认为当前model | 
-| 4 | uploadViewer | 卸载viewer | - |
-| 5 | getModelInfo | 获取模型信息 | function(viewer, models) 依次为viewer对象、已加载的model对象 | 
+| 1 | clearColor | Clear the model components for coloring |-|
+| 2 | viewerFiting | Focus camera | function(ids, focal) in turn are the id and focal length of the component to be focused |
+| 3 | unloadModel | Unload model model | function(model) is the model model that needs to be unloaded in turn, otherwise it defaults to the current model |
+| 4 | uploadViewer | Uninstall viewer |-|
+| 5 | getModelInfo | Get model information | function(viewer, models) is the viewer object and the loaded model object in turn |
 
 ### Slot
-| 序号 | name | 说明 |
+| Serial number | name | Description |
 | ---- | ---- | ---- |
-| 1 | - | 位于模型dom下的自定义dom区 | 
+| 1 |-| Custom dom area under the model dom |
 
-### 版本记录
-> 1.1.0 减少组件包体积，将js依赖cdn
+### Version history
+> 1.1.0 Reduce the size of the component package, and rely on cdn for js
 
-> 1.0.0 因国外cdn时间波动太大，将js依赖本地化，并优化初始化事件防止init错误
+> 1.0.0 Because foreign CDN time fluctuates too much, localize js dependency and optimize initialization events to prevent init errors
 
 ## Project setup
 ```
@@ -90,4 +88,3 @@ npm run serve
 ```
 npm run build
 ```
-
