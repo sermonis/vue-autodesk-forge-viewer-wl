@@ -1,6 +1,6 @@
 # vue-autodesk-forge-viewer-wl
 
-A vue plugin for displaying bim models on the browser, which can preview the converted BIM and CAD files.
+A Vue plugin for displaying bim models on the browser, which can preview the converted BIM and CAD files.
 Written based on Vue and Autodesk Forge Viewer. Currently supports single model loading and multi-model sequential loading. Other features are being expanded.
 
 Portal: [Github](https://github.com/hql7/wl-bim-viewer) & [autodesk forge viewer document](https://forge.autodesk.com/en/docs/viewer/v7/reference /Viewing/)
