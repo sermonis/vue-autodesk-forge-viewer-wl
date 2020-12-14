@@ -5,7 +5,7 @@ Written based on Vue and Autodesk Forge Viewer. Currently supports single model 
 
 Portal: [Github](https://github.com/hql7/wl-bim-viewer) & [autodesk forge viewer document](https://forge.autodesk.com/en/docs/viewer/v7/reference /Viewing/)
 
-## [Online Access](http://wlui.com.cn/ui/bim)
+## [Demo](http://wlui.com.cn/ui/bim)
 
 ## Get started quickly
 `npm i wl-bim-viewer -S`
